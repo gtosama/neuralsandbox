@@ -35,7 +35,7 @@ def process(cv2 , np , im , model):
                     roi = cv2.resize(roi, (28, 28), interpolation=cv2.INTER_AREA)
                     roi = cv2.dilate(roi, (3, 3))
                     
-                    # reshape the image
+                    # reshape the roi
                     roi = roi.reshape(1, img_rows, img_cols, 1)
                     #use nn to predict numbers
                     prediction = model.predict(roi)
